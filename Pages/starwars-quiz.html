@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Wars Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #09f;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #09f;
+      color: #000;
+      font-weight: bold;
+    }
+    button:hover { background: #0cf; }
+    .answers { text-align: left; margin-top: 15px; }
+    .answers label { display: block; padding: 8px 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Star Wars Quiz</h1>
+  <div class="quiz-container">
+    <h2 id="question">Question will appear here</h2>
+
+    <div class="answers" id="answers"></div>
+
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+
+    <h2 id="score" style="margin-top:20px;"></h2>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the name of Han Solo's ship?",
+        answers: ["Star Destroyer", "Millennium Falcon", "X-Wing", "Razor Crest"],
+        correct: 1
+      },
+      {
+        question: "Who is Luke Skywalker's father?",
+        answers: ["Obi-Wan Kenobi", "Yoda", "Darth Vader", "Mace Windu"],
+        correct: 2
+      },
+      {
+        question: "What color is Mace Windu's lightsaber?",
+        answers: ["Blue", "Green", "Purple", "Red"],
+        correct: 2
+      },
+      {
+        question: "Which planet is home to the Wookiees?",
+        answers: ["Tatooine", "Dagobah", "Kashyyyk", "Hoth"],
+        correct: 2
+      }
+    ];
+
+    let index = 0;
+    let score = 0;
+    let selected = null;
+
+    function loadQuestion() {
+      const q = quizData[index];
+
+      document.getElementById("question").innerText = q.question;
+      const answersDiv = document.getElementById("answers");
+      answersDiv.innerHTML = "";
+
+      q.answers.forEach((ans, i) => {
+        answersDiv.innerHTML += `
+          <label>
+            <input type="radio" name="answer" value="${i}" onclick="selected=${i}"> ${ans}
+          </label>`;
+      });
+    }
+
+    function nextQuestion() {
+      if (selected === null) return alert("Pick an answer, young Padawan.");
+
+      const isCorrect = selected == quizData[index].correct;
+      alert(isCorrect ? "Correct!" : "Wrong! The correct answer was: " + quizData[index].answers[quizData[index].correct]);
+
+      if (isCorrect) score++;
+      selected = null;
+      index++;
+
+      if (index >= quizData.length) {
+        document.getElementById("score").innerText = `You scored ${score}/${quizData.length}!`;
+        document.getElementById("question").style.display = "none";
+        document.getElementById("answers").style.display = "none";
+        document.getElementById("nextBtn").style.display = "none";
+      } else {
+        loadQuestion();
+      }
+    }
+
+    loadQuestion();
+      
+
+    loadQuestion();
+  </script>
+</body>
+</html>
+

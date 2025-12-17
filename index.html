@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walker Burbidge Interactive Site</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top">Top</a>
+    <a href="#resume">Resume</a>
+    <a href="#starwars">Star Wars Info</a>
+    <a href="#video">YouTube</a> 
+    <a href="#tableau">Tableau</a>
+    <a href="Pages/starwars-quiz.html">Star Wars Quiz</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Top Section -->
+  <section class="section" id="top">
+    <h1>Walker Burbidge Interactive Site</h1>
+    <p>Welcome to the official interactive site of Walker Burbidge, home of his information, interests, and resume.</p>
+  </section>
+
+  <!-- Resume Section -->
+  <section class="section resume" id="resume">
+    <h2>My Resume</h2>
+    <img src="Images/Walker.JPG" alt="Walker" width="200">
+
+    <h4>Walker Burbidge</h4>
+      <br>
+      Infield Preach My Gospel Mentor<br>
+      Missionary Training Center<br>
+      Provo, Utah <br>
+      <br>
+      
+    <div class="card">
+      <h3>Education</h3>
+      <ul>
+        <li>Brigham Young University - BS Accounting</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Experience</h3>
+      <ul>
+        <li>Infield Preach My Gospel Mentor</li>
+        <li>Personal Sales Representative</li>
+        <li>Warehouse Associate</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Skills</h3>
+      <ul>
+        <li>Clear Communication</li>
+        <li>High Social Awareness</li>
+        <li>Strong Work Ethic</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Star Wars Section -->
+  <section class="section" id="starwars">
+    <h2>Star Wars: A Long Time Ago in A Galaxy Far Far Away...</h2>
+    <div class="card">
+      <h3>Top 3 Episodes</h3>
+      <ol>
+        <li>Revenge of The Sith
+          <ul>
+            <li>Anakin Skywalker’s fall to the Dark Side.</li>
+            <li>Intense lightsaber duels.</li>
+          </ul>
+        </li>
+        <li>The Empire Strikes Back
+          <ul>
+            <li>The Empire returns after a huge loss.</li>
+            <li>Famous plot twist revealed.</li>
+          </ul>
+        </li>
+        <li>Return of The Jedi
+          <ul>
+            <li>End of the galactic war.</li>
+            <li>Loose ends are wrapped up.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="section" id="video">
+    <h2>Star Wars Crash Course</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/T9-SJ6ikuj0" 
+        title="Star Wars Crash Course" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Tableau Section -->
+  <section class="section tableau-container" id="tableau">
+    <h2>Interactive Star Wars Dashboard</h2>
+    <div class='tableauPlaceholder' id='viz1765930188428' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='Star Wars Dashboard' src='https://public.tableau.com/static/images/St/StarWars_7/StarWars/1_rss.png' style='border: none;' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='StarWars_7/StarWars' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/St/StarWars_7/StarWars/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1765930188428');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+  </section>
+
+  <!-- Quiz Link -->
+  <section class="section">
+    <a href="Pages/starwars-quiz.html">Play the Star Wars Quiz</a>
+  </section>
+
+</main>
+</body>
+</html>
+
